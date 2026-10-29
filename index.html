@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Autumn 2026 Anime Guide / 2026年秋アニメガイド</title>
+<meta name="description" content="A printed-style guide to the autumn 2026 anime season, with schedules, platforms and genres.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f6efe3;--paper2:#ede3d0;--ink:#1c1710;--soft:#5b5043;--persimmon:#c2410c;--green:#1f4d3a;--rule:#1c1710;
+--serif:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",Georgia,serif;--sans:"Source Sans 3","Hiragino Sans","Yu Gothic",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--persimmon);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--paper);padding:8px 12px;z-index:10}
+.skip:focus{left:0}
+
+/* top bar */
+.topbar{border-bottom:1px solid var(--rule);font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-top:8px;padding-bottom:8px}
+.lang{display:inline-flex;border:1.5px solid var(--ink)}
+.lang button{font:inherit;letter-spacing:.06em;background:transparent;color:var(--ink);border:0;padding:5px 14px;cursor:pointer}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+
+/* masthead */
+.masthead{padding:28px 0 22px;border-bottom:6px double var(--ink)}
+.mast-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:end}
+.kicker{color:var(--persimmon);font-weight:700;letter-spacing:.22em;text-transform:uppercase;font-size:13px;margin:0 0 6px}
+h1{font-family:var(--serif);font-weight:900;margin:0;line-height:.95;font-size:clamp(52px,9vw,116px);letter-spacing:-.02em}
+h1 .sub2{display:block;color:var(--green);font-size:.5em;letter-spacing:.04em;margin-top:.14em}
+.note{border-left:4px solid var(--persimmon);padding-left:18px;max-width:46ch}
+.note h2{font-family:var(--serif);font-size:15px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 6px;color:var(--green)}
+.note p{margin:0 0 .6em;font-size:16px}
+.note .sig{font-style:italic;color:var(--soft);font-size:14px}
+
+/* controls */
+.controls{padding:18px 0 14px;border-bottom:1px solid var(--rule);position:sticky;top:0;background:var(--paper);z-index:5}
+.week{display:grid;grid-template-columns:repeat(8,1fr);border:1.5px solid var(--ink);margin-bottom:12px}
+.week button{font:inherit;font-weight:600;background:transparent;border:0;border-right:1px solid var(--ink);padding:10px 2px;cursor:pointer;color:var(--ink)}
+.week button:last-child{border-right:0}
+.week button:hover{background:var(--paper2)}
+.week button[aria-pressed="true"]{background:var(--persimmon);color:#fff}
+.fields{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:10px;align-items:end}
+.field label{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:3px}
+.field input,.field select{width:100%;font:inherit;font-size:16px;padding:8px 10px;background:#fbf7ef;color:var(--ink);border:1.5px solid var(--ink);border-radius:0}
+.reset{font:inherit;padding:9px 14px;background:var(--green);color:#fff;border:0;cursor:pointer}
+.count{margin:10px 0 0;font-size:14px;color:var(--soft)}
+
+/* list */
+main{padding:26px 0 40px}
+.grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px}
+.entry{display:grid;grid-template-columns:170px 1fr;gap:18px;padding:22px 0;border-bottom:1px solid var(--rule)}
+.cover{position:relative;aspect-ratio:2/3;overflow:hidden;border:1.5px solid var(--ink);background:var(--paper2)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.typo{position:absolute;inset:0;padding:10px;display:flex;flex-direction:column;justify-content:space-between;color:var(--ink)}
+.typo .big{font-family:var(--serif);font-weight:900;line-height:1.1;writing-mode:vertical-rl;text-orientation:upright;align-self:flex-end;font-size:clamp(22px,2.6vw,30px);max-height:72%;overflow:hidden}
+.typo .en{font-family:var(--serif);font-size:11px;line-height:1.25;border-top:1px solid currentColor;padding-top:5px;letter-spacing:.02em}
+.typo .tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:700}
+.meta-top{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:4px}
+.kind{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:2px 8px;border:1.5px solid}
+.kind.new{color:var(--persimmon);border-color:var(--persimmon)}
+.kind.sequel{color:var(--green);border-color:var(--green)}
+.entry h3{font-family:var(--serif);font-weight:900;font-size:24px;line-height:1.2;margin:0}
+.entry .sub{font-family:var(--serif);color:var(--soft);font-size:15px;margin:2px 0 8px}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:1px 12px;margin:0 0 8px;font-size:14.5px}
+.facts dt{color:var(--soft);font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding-top:2px}
+.facts dd{margin:0}
+.genres{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0 0 8px;padding:0}
+.genres li{font-size:12.5px;border:1px solid var(--ink);padding:1px 8px}
+.desc{margin:0;font-size:15.5px}
+.empty{padding:50px 0;text-align:center;font-family:var(--serif);font-size:20px}
+[hidden]{display:none!important}
+
+footer{border-top:6px double var(--ink);padding:22px 0 40px;font-size:14px;color:var(--soft)}
+footer p{margin:0 0 .7em;max-width:90ch}
+
+@media (max-width:960px){
+ .grid{grid-template-columns:1fr}
+ .fields{grid-template-columns:1fr 1fr}
+ .field.search{grid-column:1/-1}
+ .mast-grid{grid-template-columns:1fr;gap:20px}
+}
+@media (max-width:560px){
+ body{font-size:16px}
+ .controls{position:static}
+ .week{grid-template-columns:repeat(4,1fr)}
+ .week button{border-bottom:1px solid var(--ink)}
+ .entry{grid-template-columns:110px 1fr;gap:12px}
+ .entry h3{font-size:20px}
+ .typo .big{font-size:20px}
+ .fields{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#list" data-i="skip">Skip to the listings</a>
+
+<div class="topbar"><div class="wrap">
+ <span data-i="issue">Autumn Issue · 29 Oct 2026</span>
+ <div class="lang" role="group" aria-label="Language / 言語">
+  <button type="button" data-lang="en" aria-pressed="true">EN</button>
+  <button type="button" data-lang="ja" aria-pressed="false">日本語</button>
+ </div>
+</div></div>
+
+<header class="masthead"><div class="wrap mast-grid">
+ <div>
+  <p class="kicker" data-i="kicker">The Season Guide</p>
+  <h1><span data-i="h1a">Autumn 2026</span><span class="sub2" data-i="h1b">2026年秋</span></h1>
+ </div>
+ <aside class="note" aria-labelledby="note-h">
+  <h2 id="note-h" data-i="noteH">Editor's note</h2>
+  <p data-i="noteP1"></p>
+  <p data-i="noteP2"></p>
+  <p class="sig" data-i="sig"></p>
+ </aside>
+</div></header>
+
+<section class="controls" aria-label="Filters">
+ <div class="wrap">
+  <div class="week" id="week" role="group" aria-label="Weekday"></div>
+  <div class="fields">
+   <div class="field search"><label for="q" data-i="search">Search</label><input id="q" type="search" autocomplete="off"></div>
+   <div class="field"><label for="platform" data-i="platform">Platform</label><select id="platform"></select></div>
+   <div class="field"><label for="kind" data-i="kind">New / Sequel</label><select id="kind"></select></div>
+   <div class="field"><label for="genre" data-i="genre">Genre</label><select id="genre"></select></div>
+   <button type="button" class="reset" id="reset" data-i="reset">Reset</button>
+  </div>
+  <p class="count" id="count" role="status" aria-live="polite"></p>
+ </div>
+</section>
+
+<main><div class="wrap">
+ <ul class="grid" id="list"></ul>
+ <p class="empty" id="empty" hidden></p>
+</div></main>
+
+<footer><div class="wrap">
+ <p lang="en">Schedule checked 29 Oct 2026. Times are simulcast times from the Crunchyroll / Netflix lineups; regional availability varies, check the platform page for your region. Images are promotional artwork; credits belong to their respective studios and rights holders.</p>
+ <p lang="ja">スケジュールは2026年10月29日に確認。時刻はCrunchyroll／Netflixのラインナップにおける同時配信時刻です。地域により配信状況は異なるため、お住まいの地域のプラットフォームページをご確認ください。画像は宣伝用アートワークであり、クレジットはそれぞれのスタジオおよび権利者に帰属します。</p>
+</div></footer>
+
+<script>
+"use strict";
+const ANIME = [{"desc_en":"Maomao is back at the Verdigris House, and a quiet breakfast pulls her into a new investigation. Whispers of famine and an immortal maiden lead her far beyond the palace she knows.","desc_ja":"猫猫が緑青館に戻り、穏やかな朝食が新たな事件の始まりになる。飢饉の噂と不死の娘の話が、彼女を宮廷の外の世界へと導いていく。","genres_en":["Mystery","Drama","Historical"],"genres_ja":["ミステリー","ドラマ","時代劇"],"id":"apothecary","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-02","studio":"OLM","time_en":"8:00 a.m. PT, weekly","time_ja":"毎週金曜 8:00 PT（日本時間 土曜 0:00ごろ）","title_en":"The Apothecary Diaries Season 3","title_ja":"薬屋のひとりごと 第3期","weekday_en":"Friday","weekday_ja":"金曜"},{"desc_en":"After five years away, Asta and the Magic Knights return for the Spade Kingdom arc. They raid the enemy kingdom to rescue their captured captains from the Dark Triad.","desc_ja":"5年ぶりの復活。アスタと魔法騎士団がスペード王国編へ突入し、闇の三極に囚われた団長たちを救うため敵地へ乗り込む。","genres_en":["Action","Fantasy","Shonen"],"genres_ja":["アクション","ファンタジー","少年"],"id":"black-clover","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-03","studio":"Studio Pierrot","time_en":"8:00 a.m. PT, weekly","time_ja":"毎週土曜 8:00 PT（日本時間 日曜 0:00ごろ）","title_en":"Black Clover Season 2","title_ja":"ブラッククローバー 第2期","weekday_en":"Saturday","weekday_ja":"土曜"},{"desc_en":"1890s America. A cross-country horse race becomes a strange, high-stakes battle as Johnny Joestar and Gyro Zeppeli ride for a prize far bigger than money.","desc_ja":"1890年代のアメリカ。大陸横断レースが、賞金以上のものを懸けた奇妙で過酷な戦いになる。ジョニィとジャイロの旅が始まる。","genres_en":["Adventure","Action","Supernatural"],"genres_ja":["冒険","アクション","超常"],"id":"steel-ball-run","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Netflix","platform_ja":"Netflix","premiere":"2026-09-25","studio":"david production","time_en":"Weekly, Fridays","time_ja":"毎週金曜配信","title_en":"STEEL BALL RUN: JoJo's Bizarre Adventure","title_ja":"ジョジョの奇妙な冒険 スティール・ボール・ラン","weekday_en":"Friday","weekday_ja":"金曜"},{"desc_en":"A new crew in Night City. A young cinephile, a street gang member, a netrunner and a veteran edgerunner collide in a standalone story that does not need the first season to hit hard.","desc_ja":"ナイトシティの新たなクルー。映画好きの青年、ストリートギャング、ネットランナー、ベテランのエッジランナーが交錯する、独立した物語。","genres_en":["Sci-Fi","Action","Cyberpunk"],"genres_ja":["SF","アクション","サイバーパンク"],"id":"cyberpunk","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Netflix","platform_ja":"Netflix","premiere":"2026-10-20","studio":"TRIGGER","time_en":"All 10 episodes at once","time_ja":"全10話一挙配信","title_en":"Cyberpunk: Edgerunners 2","title_ja":"サイバーパンク エッジランナーズ2","weekday_en":"Tuesday","weekday_ja":"火曜"},{"desc_en":"Ranma's cursed transformations and chaotic engagements return. MAPPA's remake keeps the slapstick, the martial-arts mayhem and the love triangle front and centre.","desc_ja":"水をかぶると変わる体質と、騒がしい婚約者たち。MAPPAによるリメイク第3期は、ドタバタと格闘と三角関係をそのままに届ける。","genres_en":["Comedy","Romance","Martial Arts"],"genres_ja":["コメディ","ラブコメ","格闘"],"id":"ranma","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Netflix exclusive","platform_ja":"Netflix 独占","premiere":"2026-10-03","studio":"MAPPA","time_en":"Weekly, after Japanese TV broadcast","time_ja":"毎週、日本のテレビ放送後に配信","title_en":"Ranma 1/2 Season 3","title_ja":"らんま1/2 第3期","weekday_en":"Saturday","weekday_ja":"土曜"},{"desc_en":"Taiki, Chinatsu and Hina return for a slower, warmer kind of sports story. Badminton and basketball share the gym, and feelings that were left unsaid start to surface.","desc_ja":"大喜、千夏、雛の物語が続く。バドミントンとバスケが交わる体育館で、言えなかった気持ちが少しずつ動き出す、穏やかで熱い青春劇。","genres_en":["Romance","Sports"],"genres_ja":["恋愛","スポーツ"],"id":"blue-box","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Netflix, weekly","platform_ja":"Netflix 毎週配信","premiere":"2026-10-04","studio":null,"time_en":"Weekly","time_ja":"毎週配信","title_en":"Blue Box Season 2","title_ja":"アオのハコ 第2期","weekday_en":"Sunday","weekday_ja":"日曜"},{"desc_en":"Ashito is now on the elite A team, and the step up is brutal. This season is about whether raw instinct can survive a system that demands far more.","desc_ja":"葦人がエリートのAチームへ。ステップアップは想像以上に厳しい。直感だけでは生き残れない場所で、彼が何を掴むのかが見どころ。","genres_en":["Sports","Drama"],"genres_ja":["スポーツ","ドラマ"],"id":"aoashi","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-04","studio":"TMS Entertainment","time_en":"2:00 a.m. PT, weekly","time_ja":"毎週日曜 2:00 PT","title_en":"Aoashi Season 2","title_ja":"アオアシ 第2期","weekday_en":"Sunday","weekday_ja":"日曜"},{"desc_en":"A new telling of the classic: three schoolgirls are summoned to the world of Cephiro, where they must become Magic Knights and restore a world held together by prayer.","desc_ja":"名作の新たなアニメ化。セフィーロに召喚された3人の少女が、祈りによって支えられる世界を救うためマジックナイトとなる。","genres_en":["Fantasy","Action","Adventure"],"genres_ja":["ファンタジー","アクション","冒険"],"id":"rayearth","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-07","studio":"E&H production","time_en":"8:15 a.m. PT, weekly","time_ja":"毎週水曜 8:15 PT","title_en":"Magic Knight Rayearth","title_ja":"マジックナイト・レイアース","weekday_en":"Wednesday","weekday_ja":"水曜"},{"desc_en":"Ageha answers a mysterious call and is thrown into a ruined future world. Fans waited over a decade for this adaptation, which is set to tell the complete story.","desc_ja":"謎の呼びかけに応えた夜科アゲハは、荒廃した未来の世界へ。10年以上待たれた原作の、完結まで描くアニメ化として注目されている。","genres_en":["Action","Supernatural","Sci-Fi"],"genres_ja":["アクション","超常","SF"],"id":"psyren","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Crunchyroll (outside Japan)","platform_ja":"Crunchyroll（日本以外）","premiere":"2026-10-05","studio":"Satelight","time_en":"7:30 a.m. PT, weekly","time_ja":"毎週月曜 7:30 PT","title_en":"PSYREN","title_ja":"PSYREN -サイレン-","weekday_en":"Monday","weekday_ja":"月曜"},{"desc_en":"A dark-edged romance from Fuji TV's noitaminA block. A noblewoman marked for death and the assassin sent for her end up bound together in an unlikely marriage.","desc_ja":"ノイタミナ発の、仄暗いロマンス。死を運命づけられた令嬢と、彼女を狙う暗殺者が、思いがけない結婚で結ばれる。","genres_en":["Romance","Drama","Historical"],"genres_ja":["恋愛","ドラマ","時代劇"],"id":"firefly-wedding","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-09","studio":"david production","time_en":"9:00 a.m. PT, weekly","time_ja":"毎週金曜 9:00 PT","title_en":"Firefly Wedding","title_ja":"ホタルの嫁入り","weekday_en":"Friday","weekday_ja":"金曜"},{"desc_en":"Kimihiko's life after Siesta keeps pulling him back into cases. With Nagisa at his side, the second season opens a new round of mysteries he cannot walk away from.","desc_ja":"シエスタ亡き後も、君塚彦彦は事件に引き戻される。渚とともに、新たな謎へ向き合う第2期。","genres_en":["Mystery","Comedy","Drama"],"genres_ja":["ミステリー","コメディ","ドラマ"],"id":"detective-dead","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-07","studio":"ENGI","time_en":"6:30 a.m. PT, weekly","time_ja":"毎週水曜 6:30 PT","title_en":"The Detective Is Already Dead Season 2","title_ja":"探偵はもう、死んでいる。 第2期","weekday_en":"Wednesday","weekday_ja":"水曜"},{"desc_en":"Office worker Sasaki and his reincarnated sage bird Peeps juggle modern Japan and another world. Season 2 keeps the low-key comedy and the multi-realm scheming.","desc_ja":"社畜の佐々木と、転生した賢者ピーちゃん。現代日本と異世界を行き来する、ゆるくて策謀めいた日々が続く。","genres_en":["Fantasy","Comedy","Adventure"],"genres_ja":["ファンタジー","コメディ","冒険"],"id":"sasaki-peeps","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-07","studio":"SILVER LINK.","time_en":"6:00 a.m. PT, weekly","time_ja":"毎週水曜 6:00 PT","title_en":"Sasaki and Peeps Season 2","title_ja":"佐々木とピーちゃん 第2期","weekday_en":"Wednesday","weekday_ja":"水曜"},{"desc_en":"Desir, sent back in time after the Shadow World's fall, now faces the Shadow Labyrinth. Knowledge of the future is his weapon, and his friends are his reason to use it.","desc_ja":"影の世界崩壊後に過去へ戻ったデジールが、影の迷宮に挑む。未来の知識を武器に、仲間を守るための戦いが始まる。","genres_en":["Fantasy","Action"],"genres_ja":["ファンタジー","アクション"],"id":"returner-magic","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-07","studio":"Arvo Animation","time_en":"10:15 a.m. PT, weekly","time_ja":"毎週水曜 10:15 PT","title_en":"A Returner's Magic Should Be Special Season 2","title_ja":"帰還者の魔法は特別です 第2期","weekday_en":"Wednesday","weekday_ja":"水曜"},{"desc_en":"Reincarnated into the world of an erotic game as a side character, the hero tries to dodge a doomed fate by mastering magic and rewriting the story around him.","desc_ja":"エロゲーの世界に脇役として転生した主人公が、破滅フラグを避けるため魔法を極め、物語そのものを書き換えていく。","genres_en":["Fantasy","Comedy","Romance"],"genres_ja":["ファンタジー","コメディ","恋愛"],"id":"magical-explorer","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-03","studio":"WHITE FOX","time_en":"9:30 a.m. PT, weekly","time_ja":"毎週土曜 9:30 PT","title_en":"Magical Explorer","title_ja":"マジカル・エクスプローラー","weekday_en":"Saturday","weekday_ja":"土曜"},{"desc_en":"A struggling player stumbles into a legendary blacksmith class in a VR game. Crafting, not just fighting, becomes his path to the top.","desc_ja":"冴えないプレイヤーがVRゲームで伝説の鍛冶職に目覚める。戦うだけでなく、作ることで頂点へ上り詰める物語。","genres_en":["Action","Fantasy","Game"],"genres_ja":["アクション","ファンタジー","ゲーム"],"id":"overgeared","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-09-27","studio":"J.C.Staff","time_en":"7:30 a.m. PT, weekly","time_ja":"毎週日曜 7:30 PT","title_en":"Overgeared","title_ja":"オーバーギアード","weekday_en":"Sunday","weekday_ja":"日曜"},{"desc_en":"Shiki Ichinose, heir to Oni blood, is caught in the generations-long war with the Momotaro clan. Mastering his power is the only way to survive and seek revenge.","desc_ja":"鬼の血を引く一ノ瀬四季が、桃太郎機関との長き戦いに巻き込まれる。力を制御し、復讐を果たすための戦いが続く。","genres_en":["Action","Supernatural","Dark Fantasy"],"genres_ja":["アクション","超常","ダークファンタジー"],"id":"tougen-anki","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-02","studio":"Studio Hibari","time_en":"9:00 a.m. PT, weekly","time_ja":"毎週金曜 9:00 PT","title_en":"TOUGEN ANKI: Nikko Kegon Falls Arc","title_ja":"桃源暗鬼 日光・華厳の滝編","weekday_en":"Friday","weekday_ja":"金曜"},{"desc_en":"Takemichi leaps back again as three gangs collide. The War of the Three Titans arc raises the stakes for everyone he is trying to save.","desc_ja":"三つの勢力がぶつかる三天戦争編。タケミチは再び過去へ戻り、救いたい人々のために戦う。","genres_en":["Action","Drama","Time Travel"],"genres_ja":["アクション","ドラマ","タイムリープ"],"id":"tokyo-revengers","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Disney+ / Hulu","platform_ja":"Disney+","premiere":"2026-10-02","studio":"LIDEN FILMS","time_en":"Saturdays 2:00 a.m. JST in Japan","time_ja":"日本では土曜 2:00 JST","title_en":"Tokyo Revengers: War of the Three Titans Arc","title_ja":"東京リベンジャーズ 三天戦争編","weekday_en":"Friday","weekday_ja":"金曜"},{"desc_en":"Seido's final summer together. Sawamura, Furuya and captain Miyuki chase one last tournament, with every pitch carrying the weight of graduation.","desc_ja":"青道の最後の夏。沢村、降谷、御幸主将が、卒業を前に最後の大会へ。1球ごとに重みが増す野球ドラマ。","genres_en":["Sports","Drama"],"genres_ja":["スポーツ","ドラマ"],"id":"ace-diamond","image":null,"kind_en":"Sequel","kind_ja":"続編","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-11","studio":"OLM Team Yoshioka","time_en":"Weekly, time TBA","time_ja":"毎週、時間未定","title_en":"Ace of the Diamond act II, Second Season","title_ja":"ダイヤのA actII 第2シーズン","weekday_en":"Sunday","weekday_ja":"日曜"},{"desc_en":"In a world without sunlight, people who reach the end of their lives can choose to become flowers. A quiet, unsettling story about what a life is worth.","desc_ja":"太陽を失った世界で、寿命を迎えた人は花になることを選べる。命の価値と向き合う、静かで不穏な物語。","genres_en":["Sci-Fi","Drama","Dystopia"],"genres_ja":["SF","ドラマ","ディストピア"],"id":"fool-night","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Netflix exclusive","platform_ja":"Netflix 独占","premiere":"2026-11-26","studio":"Sunrise, SHAFT","time_en":"All episodes at once","time_ja":"全話一挙配信","title_en":"Fool Night","title_ja":"フールナイト","weekday_en":"Thursday","weekday_ja":"木曜"},{"desc_en":"Reborn in a spacefaring world, an ordinary man takes up work as a mercenary. Ship battles, odd jobs and a second life far from Earth drive this one.","desc_ja":"宇宙へ広がる世界に転生した男が、傭兵として生き直す。艦船戦と請負仕事、地球から遠く離れた第二の人生。","genres_en":["Sci-Fi","Action","Adventure"],"genres_ja":["SF","アクション","冒険"],"id":"space-mercenary","image":null,"kind_en":"New series","kind_ja":"新作","platform_en":"Crunchyroll","platform_ja":"Crunchyroll","premiere":"2026-10-04","studio":"Studio A-Cat","time_en":"7:00 a.m. PT, weekly","time_ja":"毎週日曜 7:00 PT","title_en":"Reborn as a Space Mercenary","title_ja":"宇宙傭兵に転生した男","weekday_en":"Sunday","weekday_ja":"日曜"}];
+
+const DAYS = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
+const DAY_LABEL = {en:["Mon","Tue","Wed","Thu","Fri","Sat","Sun"],ja:["月","火","水","木","金","土","日"]};
+const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+
+const UI = {
+ en:{skip:"Skip to the listings",issue:"Autumn Issue · 29 Oct 2026",kicker:"The Season Guide",h1a:"Autumn 2026",h1b:"2026年秋",
+  noteH:"Editor's note",
+  noteP1:"The leaves turn, the schedules fill up, and twenty titles are asking for your evenings. Old favourites come back, from the Verdigris House to a cursed martial artist, while a handful of new series arrive on Crunchyroll and Netflix.",
+  noteP2:"Use the weekday strip to plan your week, or filter by platform, genre and whether a show is new or a sequel. Every entry lists its air time.",
+  sig:"The Editors",
+  search:"Search",platform:"Platform",kind:"New / Sequel",genre:"Genre",reset:"Reset",
+  allDays:"All",allPlatforms:"All platforms",allKinds:"New and sequels",allGenres:"All genres",
+  kindNew:"New",kindSequel:"Sequel",searchPh:"Title, studio, genre…",weekLabel:"Weekday",
+  studio:"Studio",premiere:"Premiere",weekday:"Weekday",time:"Air time",platformL:"Platform",
+  shown:(n,t)=>`Showing ${n} of ${t} titles`,empty:"No titles match these filters. Try resetting them.",
+  coverTag:"Autumn 2026",pageTitle:"Autumn 2026 Anime Guide",dateFmt:d=>`${d.d} ${MONTHS[d.m-1]} ${d.y}`},
+ ja:{skip:"番組一覧へ移動",issue:"秋号 · 2026年10月29日",kicker:"シーズンガイド",h1a:"2026年秋",h1b:"AUTUMN 2026",
+  noteH:"編集後記",
+  noteP1:"木々が色づき、番組表も賑やかになりました。今期は20作品があなたの夜を奪い合います。緑青館の物語から呪われた格闘家まで懐かしい顔ぶれが戻り、CrunchyrollとNetflixには新作も並びます。",
+  noteP2:"曜日のストリップで一週間を組み立てるもよし、配信先・ジャンル・新作か続編かで絞り込むもよし。各作品には放送時間を載せています。",
+  sig:"編集部",
+  search:"検索",platform:"配信先",kind:"新作／続編",genre:"ジャンル",reset:"リセット",
+  allDays:"全",allPlatforms:"すべての配信先",allKinds:"新作・続編すべて",allGenres:"すべてのジャンル",
+  kindNew:"新作",kindSequel:"続編",searchPh:"タイトル、制作会社、ジャンル…",weekLabel:"曜日",
+  studio:"制作",premiere:"初回",weekday:"曜日",time:"放送時間",platformL:"配信先",
+  shown:(n,t)=>`${t}作品中 ${n}作品を表示`,empty:"条件に合う作品がありません。リセットしてみてください。",
+  coverTag:"2026年秋",pageTitle:"2026年秋アニメガイド",dateFmt:d=>`${d.y}年${d.m}月${d.d}日`}
+};
+
+/* paper tints keyed by the first English genre */
+const TINTS = {Mystery:"#d9c9a3",Action:"#f0b98d",Comedy:"#f2d58a",Romance:"#eeb3a3",Sports:"#b9d1b0",
+ "Sci-Fi":"#a9c7c0",Fantasy:"#cdb8d6",Adventure:"#e3c38f",Drama:"#d8a98f"};
+const TINT_FALLBACK = "#e6d7bb";
+
+const state = {lang:"en",day:"",q:"",platform:"",kind:"",genre:""};
+const $ = id => document.getElementById(id);
+const t = () => UI[state.lang];
+const L = (o,k) => o[k+"_"+state.lang];
+
+const el = (tag,cls,text) => {const e=document.createElement(tag);if(cls)e.className=cls;if(text!=null)e.textContent=text;return e};
+const parseDate = s => {const [y,m,d]=s.split("-").map(Number);return {y,m,d}};
+const platformKey = a => a.platform_en.replace(/\s*\(.*\)$/,"").replace(/\s*exclusive$/i,"").replace(/,.*$/,"").replace(/\s*\/.*$/,"").trim();
+
+const genreMap = new Map(); // English genre -> Japanese genre
+ANIME.forEach(a=>a.genres_en.forEach((g,i)=>genreMap.set(g,a.genres_ja[i])));
+const platforms = [...new Set(ANIME.map(platformKey))].sort();
+
+function fillSelect(sel,first,opts){
+ const cur = sel.value; sel.textContent="";
+ const o0 = el("option",null,first); o0.value=""; sel.appendChild(o0);
+ opts.forEach(([v,label])=>{const o=el("option",null,label);o.value=v;sel.appendChild(o)});
+ sel.value = cur;
+}
+
+function buildControls(){
+ const u=t();
+ fillSelect($("platform"),u.allPlatforms,platforms.map(p=>[p,p]));
+ fillSelect($("kind"),u.allKinds,[["New series",u.kindNew],["Sequel",u.kindSequel]]);
+ fillSelect($("genre"),u.allGenres,[...genreMap].sort((a,b)=>a[0].localeCompare(b[0])).map(([en,ja])=>[en,state.lang==="ja"?ja:en]));
+ $("q").placeholder=u.searchPh;
+ const wk=$("week"); wk.textContent="";
+ wk.setAttribute("aria-label",u.weekLabel);
+ const mk=(val,label)=>{
+  const b=el("button",null,label); b.type="button";
+  b.setAttribute("aria-pressed",String(state.day===val));
+  b.addEventListener("click",()=>{state.day=(state.day===val)?"":val;render()});
+  wk.appendChild(b);
+ };
+ mk("",u.allDays);
+ DAYS.forEach((d,i)=>mk(d,DAY_LABEL[state.lang][i]));
+}
+
+function cover(a){
+ const wrap=el("div","cover");
+ const typo=()=>{
+  wrap.textContent="";
+  const d=el("div","typo"); d.style.background=TINTS[a.genres_en[0]]||TINT_FALLBACK;
+  d.setAttribute("role","img");
+  d.setAttribute("aria-label",L(a,"title"));
+  d.appendChild(el("span","tag",t().coverTag));
+  const big=a.title_ja.replace(/\s*第\d+期$/,"").replace(/\s*[一-鿿]{2,}編$/,"").replace(/[\s。]+$/,"");
+  d.appendChild(el("span","big",big.slice(0,12)));
+  d.appendChild(el("span","en",a.title_en));
+  wrap.appendChild(d);
+ };
+ if(a.image){
+  const img=new Image(); img.loading="lazy"; img.alt=L(a,"title");
+  img.addEventListener("error",typo); img.src=a.image; wrap.appendChild(img);
+ } else typo();
+ return wrap;
+}
+
+function entry(a){
+ const u=t(), li=el("li","entry");
+ li.appendChild(cover(a));
+ const body=el("div","body");
+ const top=el("div","meta-top");
+ top.appendChild(el("span","kind "+(a.kind_en==="Sequel"?"sequel":"new"),L(a,"kind")));
+ body.appendChild(top);
+ const h=el("h3",null,a.title_ja); h.lang="ja"; body.appendChild(h);
+ const sub=el("p","sub",a.title_en); sub.lang="en"; body.appendChild(sub);
+
+ const dl=el("dl","facts");
+ const row=(k,v)=>{dl.appendChild(el("dt",null,k));dl.appendChild(el("dd",null,v))};
+ if(a.studio) row(u.studio,a.studio);
+ row(u.premiere,u.dateFmt(parseDate(a.premiere)));
+ row(u.weekday,L(a,"weekday"));
+ row(u.time,L(a,"time"));
+ row(u.platformL,L(a,"platform"));
+ body.appendChild(dl);
+
+ const ul=el("ul","genres");
+ L(a,"genres").forEach(g=>ul.appendChild(el("li",null,g)));
+ body.appendChild(ul);
+ body.appendChild(el("p","desc",L(a,"desc")));
+ li.appendChild(body);
+ return li;
+}
+
+function matches(a){
+ if(state.day && a.weekday_en!==state.day) return false;
+ if(state.platform && platformKey(a)!==state.platform) return false;
+ if(state.kind && a.kind_en!==state.kind) return false;
+ if(state.genre && !a.genres_en.includes(state.genre)) return false;
+ if(state.q){
+  const hay=[a.title_en,a.title_ja,a.studio||"",...a.genres_en,...a.genres_ja].join(" ").toLowerCase();
+  if(!hay.includes(state.q.toLowerCase())) return false;
+ }
+ return true;
+}
+
+/* results only: used while typing so the search input keeps focus */
+function renderResults(){
+ const u=t(), list=$("list"); list.textContent="";
+ const items=ANIME.filter(matches).sort((a,b)=>a.premiere.localeCompare(b.premiere)||a.title_en.localeCompare(b.title_en));
+ items.forEach(a=>list.appendChild(entry(a)));
+ $("count").textContent=u.shown(items.length,ANIME.length);
+ const e=$("empty"); e.hidden=items.length>0; e.textContent=u.empty;
+}
+
+function render(){
+ const u=t();
+ document.documentElement.lang=state.lang;
+ document.title=u.pageTitle;
+ document.querySelectorAll("[data-i]").forEach(n=>{n.textContent=u[n.dataset.i]});
+ document.querySelectorAll(".lang button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.lang===state.lang)));
+ buildControls();
+ renderResults();
+}
+
+document.querySelectorAll(".lang button").forEach(b=>b.addEventListener("click",()=>{state.lang=b.dataset.lang;render()}));
+$("q").addEventListener("input",e=>{state.q=e.target.value.trim();renderResults()});
+["platform","kind","genre"].forEach(id=>$(id).addEventListener("change",e=>{state[id]=e.target.value;renderResults()}));
+$("reset").addEventListener("click",()=>{Object.assign(state,{day:"",q:"",platform:"",kind:"",genre:""});$("q").value="";render()});
+render();
+</script>
+</body>
+</html>
